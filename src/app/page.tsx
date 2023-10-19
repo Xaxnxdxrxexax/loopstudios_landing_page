@@ -5,7 +5,11 @@ import { useState } from "react";
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className={`${isOpen ? "h-screen overflow-hidden" : ""}`}>
+    <main
+      className={`${
+        isOpen ? "h-screen overflow-hidden" : ""
+      } mx-auto max-w-[1440px]`}
+    >
       <header className="relative flex items-center bg-clip-border">
         <picture>
           <source
@@ -88,11 +92,11 @@ export default function HomePage() {
           </p>
         </div>
       </article>
-      <aside className="mx-7 my-24 text-center lg:mt-48 lg:flex lg:flex-wrap">
-        <h3 className="mb-14 text-3xl uppercase lg:order-1 lg:mb-0 lg:ml-32 lg:text-left lg:text-5xl">
+      <aside className="mx-7 my-24 text-center lg:mx-40 lg:mt-48 lg:flex lg:flex-wrap">
+        <h3 className="mb-14 text-3xl uppercase lg:order-1 lg:mb-0 lg:text-left lg:text-5xl">
           Our Creations
         </h3>
-        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:order-3 lg:ml-32 lg:mt-24 lg:grid-cols-4">
+        <ul className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:order-3 lg:mt-24 lg:grid-cols-4">
           {creations.map(({ title, link }) => (
             <li key={title} className="group relative">
               <picture>
@@ -108,7 +112,7 @@ export default function HomePage() {
                   className={`w-full brightness-90 hover:cursor-pointer hover:opacity-50`}
                 />
               </picture>
-              <p className="absolute bottom-4 left-4 whitespace-pre text-left text-2xl/6 uppercase text-white group-hover:text-black">
+              <p className="absolute bottom-4 left-4 whitespace-pre text-left text-2xl/6 uppercase text-white group-hover:text-black lg:left-10 lg:text-3xl">
                 {title}
               </p>
             </li>
@@ -118,7 +122,7 @@ export default function HomePage() {
           see all
         </button>
       </aside>
-      <footer className="flex flex-col items-center justify-center bg-black py-16 text-center text-white lg:flex-row lg:flex-wrap">
+      <footer className="flex flex-col items-center justify-center bg-black py-16 text-center text-white lg:flex-row lg:flex-wrap lg:px-40">
         <Image
           src={"/images/logo.svg"}
           alt="logo"
@@ -139,13 +143,17 @@ export default function HomePage() {
         </ul>
         <ul className="flex gap-5 lg:order-2 lg:ml-auto lg:w-1/2 lg:justify-end">
           {icons.map((icon) => (
-            <li key={icon} className="my-5 hover:cursor-pointer">
+            <li
+              key={icon}
+              className="group relative my-5 flex flex-col items-center hover:cursor-pointer"
+            >
               <Image
                 src={`/images/icon-${icon}.svg`}
                 alt={icon}
                 width="24"
                 height="24"
               />
+              <span className="invisible absolute w-[30px] border border-b-2 group-hover:visible group-hover:-bottom-3"></span>
             </li>
           ))}
         </ul>
