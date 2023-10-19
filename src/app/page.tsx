@@ -76,8 +76,8 @@ export default function HomePage() {
         <Image
           src={"/images/desktop/image-interactive.jpg"}
           alt="interactive"
-          width={375}
-          height={375}
+          width={731}
+          height={500}
           className="h-full w-full lg:ml-32 lg:mt-36 lg:w-[60%]"
         />
         <div className="bg-white lg:absolute lg:right-0 lg:z-20 lg:w-[45%] lg:-translate-y-full lg:transform lg:pl-24 lg:pt-24 lg:text-left">
