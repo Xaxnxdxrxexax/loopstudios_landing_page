@@ -5,11 +5,7 @@ import { useState } from "react";
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main
-      className={`container mx-auto ${
-        isOpen ? "h-screen overflow-hidden" : ""
-      }`}
-    >
+    <main className={`${isOpen ? "h-screen overflow-hidden" : ""}`}>
       <header className="relative flex items-center bg-clip-border">
         <picture>
           <source
@@ -21,7 +17,7 @@ export default function HomePage() {
             alt="hero"
             width={375}
             height={375}
-            className="w-full lg:brightness-75"
+            className="h-auto w-auto lg:brightness-75"
           />
         </picture>
         <nav
@@ -72,9 +68,128 @@ export default function HomePage() {
           deliver
         </h1>
       </header>
-      <p className="text-3xl text-white">hello</p>
+      <article className="relative mx-7 my-24 text-center">
+        <Image
+          src={"/images/desktop/image-interactive.jpg"}
+          alt="interactive"
+          width={375}
+          height={375}
+          className="h-full w-full lg:ml-32 lg:mt-36 lg:w-[60%]"
+        />
+        <div className="bg-white lg:absolute lg:right-0 lg:z-20 lg:w-[45%] lg:-translate-y-full lg:transform lg:pl-24 lg:pt-24 lg:text-left">
+          <h2 className="mb-8 mt-12 text-3xl uppercase tracking-wider  lg:mt-0 lg:text-5xl">
+            The leader in interactive VR
+          </h2>
+          <p className="mx-8 font-serif text-sm/6 text-gray-400 lg:ml-0">
+            Founded in 2011, Loopstudios has been producing world-class virtual
+            reality projects for some of the best companies around the globe.
+            Our award-winning creations have transformed businesses through
+            digital experiences that bind to their brand.
+          </p>
+        </div>
+      </article>
+      <aside className="mx-7 my-24 text-center lg:mt-48 lg:flex lg:flex-wrap">
+        <h3 className="mb-14 text-3xl uppercase lg:order-1 lg:mb-0 lg:ml-32 lg:text-left lg:text-5xl">
+          Our Creations
+        </h3>
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:order-3 lg:ml-32 lg:mt-24 lg:grid-cols-4">
+          {creations.map(({ title, link }) => (
+            <li key={title} className="group relative">
+              <picture>
+                <source
+                  srcSet={`/images/desktop/image-${link}.jpg`}
+                  media="(min-width: 730px)"
+                />
+                <Image
+                  src={`/images/mobile/image-${link}.jpg`}
+                  alt={title}
+                  width={375}
+                  height={375}
+                  className={`w-full brightness-90 hover:cursor-pointer hover:opacity-50`}
+                />
+              </picture>
+              <p className="absolute bottom-4 left-4 whitespace-pre text-left text-2xl/6 uppercase text-white group-hover:text-black">
+                {title}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <button className="mt-10 border border-black px-9 py-2 text-center font-serif uppercase tracking-[.3em] hover:cursor-pointer hover:bg-black hover:text-white lg:order-2 lg:ml-auto lg:mt-0 lg:self-center">
+          see all
+        </button>
+      </aside>
+      <footer className="flex flex-col items-center justify-center bg-black py-16 text-center text-white lg:flex-row lg:flex-wrap">
+        <Image
+          src={"/images/logo.svg"}
+          alt="logo"
+          width="192"
+          height="32"
+          className="w-36 md:max-w-[190px] md:flex-grow lg:order-1"
+        />
+        <ul className="lg:flew-row mt-4 lg:order-3 lg:mt-0 lg:flex lg:w-1/2 lg:gap-4">
+          {menu.map((item) => (
+            <li
+              key={item}
+              className="group relative flex flex-col items-center hover:cursor-pointer"
+            >
+              {item}
+              <span className="invisible absolute w-[30px] border border-b-2 group-hover:visible group-hover:-bottom-3"></span>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex gap-5 lg:order-2 lg:ml-auto lg:w-1/2 lg:justify-end">
+          {icons.map((icon) => (
+            <li key={icon} className="my-5 hover:cursor-pointer">
+              <Image
+                src={`/images/icon-${icon}.svg`}
+                alt={icon}
+                width="24"
+                height="24"
+              />
+            </li>
+          ))}
+        </ul>
+        <p className="lg:order-4 lg:ml-auto">
+          © 2021 Loopstudios. All rights reserved.
+        </p>
+      </footer>
     </main>
   );
 }
 
+const icons = ["facebook", "twitter", "pinterest", "instagram"];
 const menu = ["About", "Careers", "Events", "Products", "Support"];
+const creations = [
+  {
+    title: "deep\nearth",
+    link: "deep-earth",
+  },
+  {
+    title: "night\narcade",
+    link: "night-arcade",
+  },
+  {
+    title: "soccer\nteam vr",
+    link: "soccer-team",
+  },
+  {
+    title: "the\ngrid",
+    link: "grid",
+  },
+  {
+    title: "from up\nabove vr",
+    link: "from-above",
+  },
+  {
+    title: "pocket\nborealis",
+    link: "pocket-borealis",
+  },
+  {
+    title: "the\ncuriosity",
+    link: "curiosity",
+  },
+  {
+    title: "make it\nfisheye",
+    link: "fisheye",
+  },
+];
