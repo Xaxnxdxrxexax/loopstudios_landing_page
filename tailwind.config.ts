@@ -5,8 +5,12 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      screens: {
+        Fm: "376px",
+      },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["var(--font-josefin)", ...fontFamily.sans],
+        serif: ["var(--font-alata)", ...fontFamily.serif],
       },
     },
   },

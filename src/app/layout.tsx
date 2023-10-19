@@ -1,10 +1,17 @@
 import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
+import { Alata, Josefin_Sans } from "next/font/google";
 
-const inter = Inter({
+const alata = Alata({
+  variable: "--font-alata",
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-sans",
+});
+
+const josefin = Josefin_Sans({
+  variable: "--font-josefin",
+  subsets: ["latin"],
+  weight: "300",
 });
 
 export const metadata = {
@@ -20,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${josefin.variable} ${alata.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
