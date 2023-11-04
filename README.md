@@ -1,4 +1,4 @@
-# Loopstudios landing page with curved sections
+# Loopstudios landing page
 
 Mock landing page with complex responsive grid and flex layout
 
