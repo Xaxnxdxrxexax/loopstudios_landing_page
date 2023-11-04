@@ -11,8 +11,8 @@ The user can:
 
 ![mobile](./public/screenshots/loopstudios-landing-page-weld-iota.vercel.app_.png)
 
-![mobile menu](<./public/screenshots/loopstudios-landing-page-weld-iota.vercel.app_%20(1).png>)
+![mobile menu](<./public/screenshots/loopstudios-landing-page-weld-iota.vercel.app_(1).png>)
 
 ## 1440px
 
-![desktop](<./public/screenshots/loopstudios-landing-page-weld-iota.vercel.app_%20(2).png>)
+![desktop](<./public/screenshots/loopstudios-landing-page-weld-iota.vercel.app_(2).png>)
